@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Details = ({ time }) => {
   const [btime, setBtime] = useState(0);
   const addBreak = (selectedTime) => {
+    localStorage.setItem("break-time", selectedTime);
     setBtime(selectedTime);
   };
+
+  const getStoredData = () => {
+    let data = {};
+    const storedData = localStorage.getItem("break-time");
+    if (storedData) {
+      data = JSON.parse(storedData);
+    }
+    return data;
+  };
+
+  useEffect(() => {
+    const storedData = getStoredData();
+    setBtime(storedData);
+  }, []);
   return (
     <div className="mx-6">
       <div className="my-10 text-start">
@@ -33,39 +48,39 @@ const Details = ({ time }) => {
         <h1 className="my-4 text-start text-lg font-bold">Add A Break</h1>
         <div className="flex justify-around bg-slate-300 py-3 rounded-xl">
           <button
-            className="bg-white rounded-full p-2"
+            className="bg-white rounded-full p-2 w-10"
             value="10"
             onClick={(e) => addBreak(e.target.value)}
           >
-            10<span>s</span>
+            10
           </button>
           <button
-            className="bg-white rounded-full p-2"
+            className="bg-white rounded-full p-2 w-10 "
             value="20"
             onClick={(e) => addBreak(e.target.value)}
           >
-            20<span>s</span>
+            20
           </button>
           <button
-            className="bg-white rounded-full p-2"
+            className="bg-white rounded-full p-2 w-10"
             value="30"
             onClick={(e) => addBreak(e.target.value)}
           >
-            30<span>s</span>
+            30
           </button>
           <button
-            className="bg-white rounded-full p-2"
+            className="bg-white rounded-full p-2 w-10"
             value="40"
             onClick={(e) => addBreak(e.target.value)}
           >
-            40<span>s</span>
+            40
           </button>
           <button
-            className="bg-white rounded-full p-2"
+            className="bg-white rounded-full p-2 w-10"
             value="50"
             onClick={(e) => addBreak(e.target.value)}
           >
-            50<span>s</span>
+            50
           </button>
         </div>
       </div>
