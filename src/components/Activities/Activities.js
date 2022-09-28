@@ -3,7 +3,7 @@ import Activity from "../Activity/Activity";
 
 const Activities = ({ activities, addTime }) => {
   return (
-    <div className="grid grid-cols-3  mt-10">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2  mt-10">
       {activities.map((activity, index) => (
         <Activity activity={activity} key={index} addTime={addTime}></Activity>
       ))}

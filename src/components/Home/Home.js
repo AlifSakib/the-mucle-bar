@@ -16,12 +16,12 @@ const Home = () => {
     setTime(time + id);
   };
   return (
-    <div className="grid grid-cols-3 bg-slate-200 h-full">
-      <div className="col-span-2 w-9/12 mx-auto mt-16">
+    <div className="lg:grid lg:grid-cols-3 bg-slate-200 h-full">
+      <div className="col-span-2 mx-16 mt-16">
         <ActivityHeader></ActivityHeader>
         <Activities activities={activities} addTime={addTime}></Activities>
       </div>
-      <div className="col-span-1 bg-white w-9/12 mx-auto">
+      <div className="lg:col-span-1 bg-white w-9/12 mx-auto rounded-xl ">
         <Details time={time}></Details>
       </div>
     </div>

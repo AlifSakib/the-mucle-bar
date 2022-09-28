@@ -22,8 +22,8 @@ const Details = ({ time }) => {
   }, []);
   return (
     <div className="mx-6">
-      <div className="my-10 text-start">
-        <h1 className="font-bold text-xl">Alif Sakib</h1>
+      <div className=" text-start py-6">
+        <h1 className="font-bold text-xl ">Alif Sakib</h1>
         <p>Dhaka, Bangladesh</p>
       </div>
       <div className="bg-slate-300 flex justify-around py-3 rounded-xl">
@@ -96,7 +96,7 @@ const Details = ({ time }) => {
         </div>
       </div>
       <div>
-        <button className="bg-indigo-500 text-white w-full py-3 rounded-lg mt-10">
+        <button className="bg-indigo-500 text-white w-full py-3 rounded-lg my-10">
           Acivity Completed
         </button>
       </div>
