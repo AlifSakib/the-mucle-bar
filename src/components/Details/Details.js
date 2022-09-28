@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Details = ({ time }) => {
   const [btime, setBtime] = useState(0);
@@ -20,6 +22,8 @@ const Details = ({ time }) => {
     const storedData = getStoredData();
     setBtime(storedData);
   }, []);
+
+  const notify = () => toast("Wow, Great Job!");
   return (
     <div className="mx-6">
       <div className=" text-start py-6">
@@ -96,9 +100,13 @@ const Details = ({ time }) => {
         </div>
       </div>
       <div>
-        <button className="bg-indigo-500 text-white w-full py-3 rounded-lg my-10">
+        <button
+          onClick={notify}
+          className="bg-indigo-500 text-white w-full py-3 rounded-lg my-10"
+        >
           Acivity Completed
         </button>
+        <ToastContainer></ToastContainer>
       </div>
     </div>
   );
