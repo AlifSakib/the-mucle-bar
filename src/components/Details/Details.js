@@ -3,7 +3,9 @@ import React from "react";
 const Details = () => {
   return (
     <div>
-      <h1>I am Details</h1>
+      <div>
+        <h1>Alif Sakib</h1>
+      </div>
     </div>
   );
 };
