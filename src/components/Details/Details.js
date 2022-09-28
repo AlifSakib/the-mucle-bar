@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Details = () => {
+const Details = ({ time }) => {
+  const [btime, setBtime] = useState(0);
+  const addBreak = (selectedTime) => {
+    setBtime(selectedTime);
+  };
   return (
     <div className="mx-6">
       <div className="my-10 text-start">
@@ -28,20 +32,40 @@ const Details = () => {
       <div className="">
         <h1 className="my-4 text-start text-lg font-bold">Add A Break</h1>
         <div className="flex justify-around bg-slate-300 py-3 rounded-xl">
-          <button className="bg-white rounded-full p-2">
-            <span>10</span>s
+          <button
+            className="bg-white rounded-full p-2"
+            value="10"
+            onClick={(e) => addBreak(e.target.value)}
+          >
+            10<span>s</span>
           </button>
-          <button className="bg-white rounded-full p-2">
-            <span>20</span>s
+          <button
+            className="bg-white rounded-full p-2"
+            value="20"
+            onClick={(e) => addBreak(e.target.value)}
+          >
+            20<span>s</span>
           </button>
-          <button className="bg-white rounded-full p-2">
-            <span>30</span>s
+          <button
+            className="bg-white rounded-full p-2"
+            value="30"
+            onClick={(e) => addBreak(e.target.value)}
+          >
+            30<span>s</span>
           </button>
-          <button className="bg-white rounded-full p-2">
-            <span>40</span>s
+          <button
+            className="bg-white rounded-full p-2"
+            value="40"
+            onClick={(e) => addBreak(e.target.value)}
+          >
+            40<span>s</span>
           </button>
-          <button className="bg-white rounded-full p-2">
-            <span>50</span>s
+          <button
+            className="bg-white rounded-full p-2"
+            value="50"
+            onClick={(e) => addBreak(e.target.value)}
+          >
+            50<span>s</span>
           </button>
         </div>
       </div>
@@ -49,11 +73,11 @@ const Details = () => {
         <h1 className="text-start text-xl font-bold">Exercise Details</h1>
         <div className="flex justify-around bg-slate-300 py-3 rounded-xl my-4">
           <h1>Exercise time</h1>
-          <p>200 secounds</p>
+          <p>{time} secounds</p>
         </div>
         <div className="flex justify-around bg-slate-300 py-3 rounded-xl my-4">
           <h1>Break time</h1>
-          <p>15 secounds</p>
+          <p>{btime} secounds</p>
         </div>
       </div>
       <div>

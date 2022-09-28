@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Activity from "../Activity/Activity";
 
-const Activities = () => {
-  const [activities, setActivities] = useState([]);
-  useEffect(() => {
-    fetch("data.json")
-      .then((res) => res.json())
-      .then((data) => setActivities(data));
-  }, []);
+const Activities = ({ activities, addTime }) => {
   return (
     <div className="grid grid-cols-3  mt-10">
       {activities.map((activity, index) => (
-        <Activity activity={activity} key={index}></Activity>
+        <Activity activity={activity} key={index} addTime={addTime}></Activity>
       ))}
     </div>
   );

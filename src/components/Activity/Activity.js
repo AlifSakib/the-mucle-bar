@@ -1,6 +1,6 @@
 import React from "react";
 
-const Activity = ({ activity }) => {
+const Activity = ({ activity, addTime }) => {
   const { id, name, img, time, description } = activity;
   return (
     <div className=" h-[400px] px-10 bg-white rounded-lg m-4">
@@ -12,7 +12,7 @@ const Activity = ({ activity }) => {
         <p className="font-bold">Time required : {time}s</p>
       </div>
       <div className="bg-green-600 mt-5 py-1 rounded-lg text-white">
-        <button>Add To List</button>
+        <button onClick={() => addTime(time)}>Add To List</button>
       </div>
     </div>
   );
