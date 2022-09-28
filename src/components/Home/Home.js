@@ -10,7 +10,7 @@ const Home = () => {
         <ActivityHeader></ActivityHeader>
         <Activities></Activities>
       </div>
-      <div className="col-span-1 bg-red-300 w-9/12 mx-auto">
+      <div className="col-span-1 bg-white w-9/12 mx-auto">
         <Details></Details>
       </div>
     </div>
