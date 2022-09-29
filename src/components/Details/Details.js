@@ -5,22 +5,18 @@ import "react-toastify/dist/ReactToastify.css";
 const Details = ({ time }) => {
   const [btime, setBtime] = useState(0);
   const addBreak = (selectedTime) => {
-    localStorage.setItem("break-time", selectedTime);
     setBtime(selectedTime);
+    localStorage.setItem("book-mark", selectedTime);
   };
 
   const getStoredData = () => {
-    let data = {};
-    const storedData = localStorage.getItem("break-time");
-    if (storedData) {
-      data = JSON.parse(storedData);
-    }
-    return data;
+    const storedData = localStorage.getItem("book-mark");
+    return storedData;
   };
 
   useEffect(() => {
     const storedData = getStoredData();
-    setBtime(storedData);
+    setBtime([storedData]);
   }, []);
 
   const notify = () => toast("Wow, Great Job!");
